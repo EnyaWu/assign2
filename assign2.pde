@@ -50,7 +50,7 @@ void draw() {
       background(0);
       image(start1,0,0);
       if(mouseX>=280 && mouseX<=360) {
-        if(mouseY>=380 && mouseY<=400) {
+        if(mouseY>=360 && mouseY<=380) {
           image(start2,0,0);
           if(mousePressed)
             gameState = RUN;
