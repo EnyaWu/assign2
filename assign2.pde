@@ -51,8 +51,8 @@ void draw() {
     case START:
       background(0);
       image(start1,0,0);
-      if(mouseX>=280 && mouseX<=360) {
-        if(mouseY>=360 && mouseY<=380) {
+      if(mouseX>=220 && mouseX<=420) {
+        if(mouseY>=375 && mouseY<=395) {
           image(start2,0,0);
           if(mousePressed)
             gameState = RUN;
@@ -127,7 +127,7 @@ void keyPressed() {
 
 
 void rushToFighter() {
-  if(enemyY>fighterY-20 || enemyY < fighterY +20) {
+  if(enemyY>fighterY+5 || enemyY < fighterY -5) {
     enemyY-=3;
   } else {
     enemyY +=3;
