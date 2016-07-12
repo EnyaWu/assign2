@@ -72,6 +72,15 @@ void draw() {
         image(hp,5,5);
         //treasure
         image(treasure,treasureX,treasureY);
+        if(fighterX == treasureX && fighterY==treasureY) {
+          hpLength+=10;
+          treasureX = floor(random(620));
+          treasureY = floor(random(460));
+        }
+        if(enemyX == treasureX && enemyY == treasureY) {
+          treasureX = floor(random(620));
+          treasureY = floor(random(460));
+        }
         //fighter
         image(fighter,fighterX,fighterY);
         //Enemy
@@ -80,7 +89,7 @@ void draw() {
         enemyX+=3;
         //repeat
         enemyX%=640;
-        collectTreasure();
+
         rushToFighter();
 
     break;
@@ -98,39 +107,27 @@ void keyPressed() {
     switch (keyCode) {
       case UP:
         if(fighterY>0)
-          fighterY-=3;
+          fighterY-=4;
         break;
       case DOWN:
         if(fighterY<height)
-          fighterY+=3;
+          fighterY+=4;
         break;
       case LEFT:
         if(fighterX>0)
-          fighterX-=3;
+          fighterX-=4;
         break;
       case RIGHT:
         if(fighterX<width)
-          fighterX+=3;
+          fighterX+=4;
         break;
     }
   }
 }
 
-void collectTreasure() {
-  if(fighterX == treasureX && fighterY==treasureY) {
-    hpLength+=10;
-    treasureX = floor(random(620));
-    treasureY = floor(random(460));
-    image(treasure,treasureX,treasureY);
-  }
-  if(enemyX == treasureX && enemyY == treasureY) {
-    treasureX = floor(random(620));
-    treasureY = floor(random(460));
-  }
-}
 
 void rushToFighter() {
-  if(enemyY>fighterY) {
+  if(enemyY>fighterY-20 || enemyY < fighterY +20) {
     enemyY-=3;
   } else {
     enemyY +=3;
