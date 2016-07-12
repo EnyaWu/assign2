@@ -110,7 +110,7 @@ void keyPressed() {
           fighterY-=4;
         break;
       case DOWN:
-        if(fighterY<height)
+        if(fighterY<height-30)
           fighterY+=4;
         break;
       case LEFT:
@@ -118,7 +118,7 @@ void keyPressed() {
           fighterX-=4;
         break;
       case RIGHT:
-        if(fighterX<width)
+        if(fighterX<width-30)
           fighterX+=4;
         break;
     }
@@ -128,8 +128,10 @@ void keyPressed() {
 
 void rushToFighter() {
   if(enemyY>fighterY+5 || enemyY < fighterY -5) {
-    enemyY-=3;
+    if(enemyY>0)
+      enemyY-=3;
   } else {
+    if(enemyY<height-30)
     enemyY +=3;
   }
 }
