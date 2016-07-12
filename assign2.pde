@@ -23,6 +23,8 @@ void setup() {
   treasureY=floor(random(460));
   hpLength=20;
   fighter = loadImage("img/fighter.png");
+  fighterX = 580;
+  fighterY = 240;
 
 //--state
   bg1 = loadImage("img/bg1.png");
@@ -119,6 +121,7 @@ void collectTreasure() {
     hpLength+=10;
     treasureX = floor(random(620));
     treasureY = floor(random(460));
+    image(treasure,treasureX,treasureY);
   }
   if(enemyX == treasureX && enemyY == treasureY) {
     treasureX = floor(random(620));
