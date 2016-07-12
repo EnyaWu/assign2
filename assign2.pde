@@ -1,4 +1,3 @@
-//You should implement your assign2 here.
 PImage fighter;
 PImage bg1, bg2;
 PImage hp;
@@ -40,21 +39,26 @@ void setup() {
   enemy1 = loadImage("img/Moocs-element-enemy1.png");
   enemyGainBomb = loadImage("img/Moocs-element-gainbomb.png");
   treasure = loadImage("img/treasure.png");
-  gameState = RUN;
+  gameState = START;
 }
 
 void draw() {
-  
+  background(0);
   //gameState
   switch(gameState) {
     case START:
-
-
-
+      background(0);
+      image(start1,0,0);
+      if(mouseX>=280 && mouseX<=360) {
+        if(mouseY>=260 && mouseY<=280) {
+          image(start2,0,0);
+          if(mousePressed)
+            gameState = RUN;
+        }
+      }
     break;
 
     case RUN:
-      background(0);
       //background
         image(bg2,speed%640,0);
         image(bg1,speed%640-640,0);
@@ -69,11 +73,14 @@ void draw() {
         //fighter
         image(fighter,fighterX,fighterY);
         //Enemy
-        image(enemy,enemyX,enemy);
+        image(enemy,enemyX,enemyY);
         //move
         enemyX+=3;
         //repeat
         enemyX%=640;
+        collectTreasure();
+        rushToFighter();
+
     break;
 
     case END:
@@ -126,6 +133,3 @@ void rushToFighter() {
     enemyY +=3;
   }
 }
-//void keyReleased(){
-
-//}
