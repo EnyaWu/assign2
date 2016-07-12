@@ -35,7 +35,7 @@ void setup() {
 
   hp = loadImage("img/hp.png");
 
-  enemy = loadImagye("img/enemy.png");
+  enemy = loadImage("img/enemy.png");
   enemy1 = loadImage("img/Moocs-element-enemy1.png");
   enemyGainBomb = loadImage("img/Moocs-element-gainbomb.png");
   treasure = loadImage("img/treasure.png");
