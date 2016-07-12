@@ -40,11 +40,11 @@ void setup() {
   enemy1 = loadImage("img/Moocs-element-enemy1.png");
   enemyGainBomb = loadImage("img/Moocs-element-gainbomb.png");
   treasure = loadImage("img/treasure.png");
-  gameState = START;
+  gameState = RUN;
 }
 
 void draw() {
-  background(0);
+  
   //gameState
   switch(gameState) {
     case START:
@@ -54,6 +54,7 @@ void draw() {
     break;
 
     case RUN:
+      background(0);
       //background
         image(bg2,speed%640,0);
         image(bg1,speed%640-640,0);
