@@ -50,7 +50,7 @@ void draw() {
       background(0);
       image(start1,0,0);
       if(mouseX>=280 && mouseX<=360) {
-        if(mouseY>=400 && mouseY<=420) {
+        if(mouseY>=380 && mouseY<=400) {
           image(start2,0,0);
           if(mousePressed)
             gameState = RUN;
@@ -96,19 +96,19 @@ void keyPressed() {
     switch (keyCode) {
       case UP:
         if(fighterY>0)
-          fighterY--;
+          fighterY-=3;
         break;
       case DOWN:
         if(fighterY<height)
-          fighterY++;
+          fighterY+=3;
         break;
       case LEFT:
         if(fighterX>0)
-          fighterX--;
+          fighterX-=3;
         break;
       case RIGHT:
         if(fighterX<width)
-          fighterX++;
+          fighterX+=3;
         break;
     }
   }
