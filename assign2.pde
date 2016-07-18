@@ -71,14 +71,14 @@ void draw() {
         image(hp,5,5);
         //treasure
         image(treasure,treasureX,treasureY);
-        if(fighterX >= treasureX && fighterX <=(treasureX+20) && fighterY>=treasureY && fighterY <=(treasureY+20)) {
+        if(fighterX >= treasureX && fighterX <=(treasureX+40) && fighterY>=treasureY && fighterY <=(treasureY+40)) {
           hpLength+=10;
           rect(20,5,hpLength,25);
           treasureX = floor(random(620));
           treasureY = floor(random(460));
           image(treasure,treasureX,treasureY);
         }
-        if(enemyX == treasureX && enemyY == treasureY) {
+        if(enemyX >= treasureX && enemyX <=(treasureX+40) && enemyY>=treasureY && enemyY <=(treasureY+40)) {
           treasureX = floor(random(620));
           treasureY = floor(random(460));
           image(treasure,treasureX,treasureY);
