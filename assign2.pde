@@ -51,7 +51,7 @@ void draw() {
     case START:
       background(0);
       image(start1,0,0);
-      if(mouseX>=180 && mouseX<=420 && mouseY>=375 && mouseY<=395) {
+      if(mouseX>=185 && mouseX<=440 && mouseY>=375 && mouseY<=395) {
         
           image(start2,0,0);
           if(mousePressed)
