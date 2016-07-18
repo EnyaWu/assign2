@@ -52,7 +52,6 @@ void draw() {
       background(0);
       image(start1,0,0);
       if(mouseX>=185 && mouseX<=440 && mouseY>=375 && mouseY<=395) {
-        
           image(start2,0,0);
           if(mousePressed)
             gameState = RUN;
@@ -74,6 +73,7 @@ void draw() {
         image(treasure,treasureX,treasureY);
         if(fighterX >= treasureX && fighterX <=(treasureX+20) && fighterY>=treasureY && fighterY <=(treasureY+20)) {
           hpLength+=10;
+          rect(20,5,hpLength,25);
           treasureX = floor(random(620));
           treasureY = floor(random(460));
           image(treasure,treasureX,treasureY);
@@ -81,7 +81,7 @@ void draw() {
         if(enemyX == treasureX && enemyY == treasureY) {
           treasureX = floor(random(620));
           treasureY = floor(random(460));
-          imageasure,treasureX,treasureY);(tre
+          image(treasure,treasureX,treasureY);
         }
         //fighter
         image(fighter,fighterX,fighterY);
@@ -125,6 +125,3 @@ void keyPressed() {
     }
   }
 }
-
-
-
