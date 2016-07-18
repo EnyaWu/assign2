@@ -71,14 +71,15 @@ void draw() {
         image(hp,5,5);
         //treasure
         image(treasure,treasureX,treasureY);
-        if(fighterX >= (treasureX-10) && fighterX <=(treasureX+40) && fighterY>=(treasureY-10) && fighterY <=(treasureY+40)) {
+        //重算交點XDDDDD
+        if(fighterX >= (treasureX) && fighterX <=(treasureX+50) && fighterY>=(treasureY-50) && fighterY <=(treasureY)){
           hpLength+=10;
           rect(20,5,hpLength,25);
           treasureX = floor(random(620));
           treasureY = floor(random(460));
           image(treasure,treasureX,treasureY);
         }
-        if(enemyX >= (treasureX-10) && enemyX <=(treasureX+40) && enemyY>=(treasureY-10) && enemyY <=(treasureY+40)) {
+        if(enemyX >= (treasureX) && enemyX <=(treasureX+50) && enemyY>=(treasureY-50) && enemyY <=(treasureY)) {
           treasureX = floor(random(620));
           treasureY = floor(random(460));
           image(treasure,treasureX,treasureY);
